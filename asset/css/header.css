@@ -1,0 +1,25 @@
+header{
+    margin: -18px;
+    padding: 0px;
+    background-color: aqua;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    list-style-type: none;
+}
+
+li{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -7,7 +7,7 @@
         private ?string $mail_util;
         private ?string $pwd_util;
         private ?string $token_util;
-        private ?int $active_util;
+        private ?int $valide_util;
         private ?int $id_role;
 
         
@@ -101,17 +101,17 @@
         }
 
         /**
-         * Get the value of active_util
+         * Get the value of valide_util
          */ 
-        public function getActiveUtil():?int{
-            return $this->active_util;
+        public function getValideUtil():?int{
+            return $this->valide_util;
         }
 
         /**
-         * Set the value of active_util
+         * Set the value of valide_util
          */ 
-        public function setActive_util(?int $active_util):void{
-            $this->active_util = $active_util;
+        public function setValideUtil(?int $valide):void{
+            $this->valide_util = $valide;
         }
 
         /**

@@ -3,10 +3,10 @@ use tpsecu;
 
 create table evenement(
     id_event int auto_increment primary key not null,
-    nom_event varchar(50),
-    desc_event text,
-    date_event datetime,
-    id_type int
+    nom_event varchar(50) not null,
+    desc_event text not null,
+    date_event datetime not null,
+    id_type int not null
 )Engine=InnoDB;
 
 create table utilisateur(
@@ -15,9 +15,9 @@ create table utilisateur(
     first_name_util varchar(50) not null,
     mail_util varchar(50) not null,
 	pwd_util varchar(100) not null,
-    id_role int,
-    valide_util tinyint(1),
-    token_util varchar(100)
+    id_role int not null default 1,
+    valide_util tinyint(1) not null default 0,
+    token_util varchar(100) null
 )Engine=InnoDB;
 
 create table role(
@@ -45,6 +45,10 @@ insert into role(name_role) values
 
 insert into type(nom_type) values
 ("Sportif"), ("Culturel");
+
+-- insertion d'un utilisateur admin
+insert into utilisateur(name_util, first_name_util, mail_util, pwd_util, id_role, valide_util)
+values ("Dupont", "Martin", "martin@gmail.com", "$2y$12$axDfahnbU9gpb7R/2njKReeHzI6Oyr.hNDVfVVVSO2lXBQbolN/ze", 2, 1); -- mdp = DBM963lmf!
 
 -- use test;
 -- drop database tpsecu;

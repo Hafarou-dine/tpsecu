@@ -40,7 +40,7 @@
         public function getUserByEmail(object $bdd){
             try{
                 $mail = $this->getMailUtil();
-                $req = $bdd->prepare('SELECT id_util, name_util, first_name_util, mail_util, pwd_util, token_util, active_util, id_role 
+                $req = $bdd->prepare('SELECT id_util, name_util, first_name_util, mail_util, pwd_util, token_util, valide_util, id_role 
                 FROM utilisateur
                 WHERE mail_util = ?;');
                 $req->bindparam(1, $mail, PDO::PARAM_STR);
@@ -107,7 +107,7 @@
         public function getUserByToken(object $bdd){
             try{
                 $token = $this->getTokenUtil();
-                $req = $bdd->prepare('SELECT id_util, name_util, first_name_util, mail_util, pwd_util, token_util, active_util, id_role 
+                $req = $bdd->prepare('SELECT id_util, name_util, first_name_util, mail_util, pwd_util, token_util, valide_util, id_role 
                 FROM utilisateur
                 WHERE token_util = ?;');
                 $req->bindparam(1, $token, PDO::PARAM_STR);
@@ -127,7 +127,7 @@
             try{
                 $token = $this->getTokenUtil();
                 $req = $bdd->prepare('UPDATE utilisateur
-                SET active_util = 1
+                SET valide_util = 1
                 WHERE token_util = ?;');
                 $req->bindparam(1, $token, PDO::PARAM_STR); 
                 $req->execute();

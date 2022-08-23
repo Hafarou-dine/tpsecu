@@ -32,6 +32,7 @@
                 FROM evenement, tpsecu.type
                 WHERE evenement.id_type = tpsecu.type.id_type;');
                 $req->execute();
+                return $req->fetchAll(PDO::FETCH_OBJ);
             }
             catch(Exception $e){
                 // affichage d'une exception en cas d’erreur

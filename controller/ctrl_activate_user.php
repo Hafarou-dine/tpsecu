@@ -25,8 +25,8 @@
         else{
             $msg = "Impossible d'activer le compte";
         }
-        // on redirige vers la page de connexion apès 5s
-        redirect("/events/login", 5000);
+        // on redirige vers la page de connexion apès 3s
+        redirect("/events/login", 3000);
     }
     else{
         // on redirige immediatement vesr la page par defaut du site

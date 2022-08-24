@@ -127,8 +127,5 @@
         public function setIdRole(?int $role):void{
             $this->id_role = $role;
         }
-        
-
-        
     }
 ?>

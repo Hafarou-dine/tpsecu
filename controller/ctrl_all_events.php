@@ -1,9 +1,11 @@
 <?php
-
+    /*--------------------------- IMPORTS ---------------------------*/
     include './utils/connectBdd.php';
     include './model/model_event.php';
     include './manager/manager_event.php';
     include './view/view_all_events.php';
+
+    /*--------------------------- LOGIQUE ---------------------------*/
     //message 
     $message = ""; 
     //instance de l'objet ManagerEvent

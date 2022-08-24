@@ -2,7 +2,6 @@
     /*--------------------------- IMPORTS ---------------------------*/
     include './utils/connectBdd.php';
     include './utils/functions.php';
-    // include './utils/smtp_datas.php';
     include './model/model_utilisateur.php';
     include './manager/manager_utilisateur.php';
     include './view/view_login.html';
@@ -16,17 +15,17 @@
             // on stock en s'assurant d'avoir nettoyer le contenu des inputs dans des variables
             $mail = cleanInput($_POST['mail_util']);
             $mdp = cleanInput($_POST['pwd_util']);
-            // 
+            // on instancie un nouvel objet MangerUtilisateur
             $user = new ManagerUtilisateur();
-            // 
+            // on set le mail à l'objet
             $user->setMailUtil($mail);
-            // 
+            // on cherche un compte associé à l'e-mailsaisie par l'utilisateur
             $compte = $user->getUserByEmail($bdd);
-            // 
+            // on verifie si un compte a été trouvé
             if($compte != null){
-                // 
+                // on verifie si les mots de passe correspondent
                 if(password_verify($mdp, $compte->pwd_util)){
-                    // 
+                    // on créé les variables de session
                     $_SESSION['id'] = $compte->id_util;
                     $_SESSION['nom'] = $compte->name_util;
                     $_SESSION['prenom'] = $compte->first_name_util;
@@ -34,9 +33,9 @@
                     $_SESSION['role'] = $compte->pwd_util;
                     $_SESSION['valide'] = $compte->valide_util;
                     $_SESSION['connected'] = true;
-                    $msg = "Connecté";
-                    // redirection vers la page liste des evenements
-                    redirect("/events/", 2000);
+                    // $msg = "Connecté";
+                    // redirection vers la page liste des evenements après 2s
+                    redirect("/events/allEvents", 2000);
                 }
             }
             else{

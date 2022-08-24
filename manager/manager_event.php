@@ -29,8 +29,10 @@
         public function getAllEvents($bdd){
             try{
                 $req = $bdd->prepare('SELECT id_event, nom_event, desc_event, date_event, nom_type 
-                FROM evenement, tpsecu.type
-                WHERE evenement.id_type = tpsecu.type.id_type;');
+                FROM evenement
+                INNER JOIN tpsecu.type
+                WHERE evenement.id_type = tpsecu.type.id_type
+                ORDER BY id_event ASC;');
                 $req->execute();
                 return $req->fetchAll(PDO::FETCH_OBJ);
             }

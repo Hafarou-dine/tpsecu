@@ -13,12 +13,17 @@
         <p><input type="text" name="nom_event"></p>
         <p>Date de l'évenement :</p>
         <p><input type="date" name="date_event"></p>
-        <p>Type d'evenement :</p>
-        <p><input type="text" name="nom_type"></p>
+        <p>
+            <label for="liste_type">Sélectionner un type :</label>
+            <select name="type" id="liste_type">
+                <option value="default">----- TYPES -----</option>
+            </select>
+        </p>
         <p>Description de l'évenement :</p>
-        <p><input type="text" name="desc_event"></p>
+        <p><textarea name="desc_event" cols="50" rows="10"></textarea></p> 
         <p><input type="submit" value="Ajouter" name="create"></p>
     </form>
-    <div id="error"></div>
+    <div id="message"></div>
+    <script src="./asset/js/script.js"></script>
 </body>
 </html>

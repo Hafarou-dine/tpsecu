@@ -23,8 +23,9 @@
             $compte = $user->getUserByEmail($bdd);
             // on verifie si un compte a été trouvé
             if($compte != null){
+                var_dump($compte);
                 // on verifie si le compte est valide
-                if($compte->valide_util === 1){
+                if($compte->valide_util == 0){
                     // on verifie si les mots de passe correspondent
                     if(password_verify($mdp, $compte->pwd_util)){
                         // on créé les variables de session
@@ -41,7 +42,7 @@
                     }
                 }
                 else{
-                    $msg = "Un mail de confirmation vous a été envoyé, veuiller activer votre votre compte avant de revienir vous connecter";
+                    $msg = "Un mail de confirmation vous a été envoyé, veuiller activer votre votre compte avant de revenir vous connecter";
                 } 
                 
             }

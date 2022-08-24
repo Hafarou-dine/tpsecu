@@ -16,7 +16,7 @@ create table utilisateur(
     mail_util varchar(50) not null,
 	pwd_util varchar(100) not null,
     id_role int not null default 1,
-    valide_util tinyint(1) not null default 0,
+    valide_util boolean not null default 0,
     token_util varchar(100) null
 )Engine=InnoDB;
 

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
     include './utils/connectBdd.php';
     include './model/model_event.php';
     include './manager/manager_event.php';

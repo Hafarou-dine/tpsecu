@@ -1,6 +1,6 @@
 <?php
-// ouverture de la session
-session_start();
+    // ouverture de la session
+    session_start();
     // chargement du header
     if(isset($_SESSION['connected'])){
         include './view/view_header_connect.html';
